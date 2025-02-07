@@ -48,6 +48,7 @@ int main() {
     "The civilizations of the galaxy call it... MASS EFFECT.\n\n";
 
     // Chapter 1
+    // Choice 1: Recruit Garrus
     std::cout << "\n[CHAPTER 1: THE CITADEL]\n"
     "\nAs commander of the Normandy, you find yourself in need of a crew. But who knows which of these aliens \n" 
     "on the citadel can be trusted? It will be up to you to decide who to bring on your journey. \n" 
@@ -94,11 +95,68 @@ int main() {
         "Ashley Williams\n"
         "Kaidan Alenko\n"
         "Tali'Zorah nar Rayya\n"
-        "Garrus Vakarian\n";
+        "Garrus Vakarian\n\n"
+        "---------------------------\n\n";
     }
     else {
         std::cout << "\n"
         "You chose to pass over Garrus for your mission.\n"
+        "\n"
+        "====== SQUAD ROSTER ======\n"
+        "Ashley Williams\n"
+        "Kaidan Alenko\n"
+        "Tali'Zorah nar Rayya\n\n"
+        "---------------------------\n\n";
+    }
+
+    // Choice 2: Recruit Wrex
+    std::cout << "Next is the unlikely, unwieldy, and completely unstopable URDNOT WREX.\n"
+    "\nWrex  is a Krogan bounty hunter working for a crime lord on the Citadel. Doesn't seem to interested in much besides payday. \n"
+    "His race was genetically sterilized by the Salarians, leading to devastating effects for his people. Kind of explains the attitude problem. \n"
+    "Despire a rough exterior, there seems to be some kind of code that guides him. Hopefully. \n"
+    "\n"
+    "[MAKE A DECISION]\n"
+    "1] Recruit Wrex\n"
+    "2] Ignore Wrex\n";
+
+    std::string user_choice_2;
+    std::cin >> user_choice_2;
+
+    while (user_choice_2 != "q" && user_choice_2 != "1" && user_choice_2 != "2") {
+
+        std::cout << "\nNot a valid choice.\n"
+        "Please enter:\n"
+        "'1'\n"
+        "'2'\n"
+        "or 'q'\n";
+        
+        std::cin >> user_choice_1;
+    }
+
+    if (user_choice_2 == "q") {
+        while (std::getline(file, line)) {
+            std::cout << line << std::endl;
+        }
+
+        file.close();
+        return 0;
+    }
+    else if (user_choice_2 == "1") {
+        std::cout << "\n"
+        "You have successfully recruited Wrex to the ship!\n"
+        "He hangs out in the cargo bay, always willing to talk about getting a cure for his people.\n"
+        "And I do mean always.\n"
+        "\n"
+        "====== SQUAD ROSTER ======\n"
+        "Ashley Williams\n"
+        "Kaidan Alenko\n"
+        "Tali'Zorah nar Rayya\n"
+        "Garrus Vakarian\n"
+        "Urdnot Wrex\n";
+    }
+    else {
+        std::cout << "\n"
+        "You leave Wrex. He's too dangerous.\n"
         "\n"
         "====== SQUAD ROSTER ======\n"
         "Ashley Williams\n"
