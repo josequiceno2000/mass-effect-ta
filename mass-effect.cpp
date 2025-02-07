@@ -14,7 +14,7 @@ int main() {
     file.close();
 
     std::cout << "Welcome to the Mass Effect Text Adventure.\n";
-    std::cout << "To quit at any time, simply type 'q' (lowercase).\n";
+    std::cout << "Please enter 'p' to play, or 'q' to quit (lowercase).\n";
 
     std::string user_input;
     std::cin >> user_input;
@@ -32,6 +32,9 @@ int main() {
 
         return 0;
     }
+    else if (user_input == "p") {
+        ;
+    }
 
     // Chapter 0 
     std::cout << "\n[CHAPTER 0: MASS EFFECT]\n"
@@ -44,7 +47,65 @@ int main() {
     "\n"
     "The civilizations of the galaxy call it... MASS EFFECT.\n\n";
 
-    return 0;
+    // Chapter 1
+    std::cout << "\n[CHAPTER 1: THE CITADEL]\n"
+    "\nAs commander of the Normandy, you find yourself in need of a crew. But who knows which of these aliens \n" 
+    "on the citadel can be trusted? It will be up to you to decide who to bring on your journey. \n" 
+    "\n"
+    "Your first potential crew member is GARRUS VAKARIAN.\n"
+    "\nGarrus is a C-Sec officer who clearly takes no bribes. He's ready to do what needs to get done. \n"
+    "In fact, he's just about done with all the red tape you have to wade through to bring criminals to justice. \n"
+    "Some describe him as a hothead hell-bent on changing the world. Others' reports claim he is a good officer, \n"
+    "albeit an impatient, stubborn one.\n"
+    "\n"
+    "[MAKE A DECISION]\n"
+    "1] Recruit Garrus\n"
+    "2] Ignore Garrus\n";
+
+    std::string user_choice_1;
+    std::cin >> user_choice_1;
+
+    while (user_choice_1 != "q" && user_choice_1 != "1" && user_choice_1 != "2") {
+
+        std::cout << "\nNot a valid choice.\n"
+        "Please enter:\n"
+        "'1'\n"
+        "'2'\n"
+        "or 'q'\n";
+        
+        std::cin >> user_choice_1;
+    }
+
+    if (user_choice_1 == "q") {
+        while (std::getline(file, line)) {
+            std::cout << line << std::endl;
+        }
+
+        file.close();
+        return 0;
+    }
+    else if (user_choice_1 == "1") {
+        std::cout << "\n"
+        "You have successfully recruited Garrus to the ship!\n"
+        "He decides to stay below deck most of the time, and doesn't bother anyone.\n"
+        "He's ready for the mission.\n"
+        "\n"
+        "====== SQUAD ROSTER ======\n"
+        "Ashley Williams\n"
+        "Kaidan Alenko\n"
+        "Tali'Zorah nar Rayya\n"
+        "Garrus Vakarian\n";
+    }
+    else {
+        std::cout << "\n"
+        "You chose to pass over Garrus for your mission.\n"
+        "\n"
+        "====== SQUAD ROSTER ======\n"
+        "Ashley Williams\n"
+        "Kaidan Alenko\n"
+        "Tali'Zorah nar Rayya\n"
+        "Garrus Vakarian\n";
+    }
 
     
 }
