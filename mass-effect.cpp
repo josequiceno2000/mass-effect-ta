@@ -3,7 +3,7 @@
 #include <string>
 
 int main() {
-    std::ifstream file("ascii-art/alliance-logo.txt"); 
+    std::ifstream file("ascii-art/title-card.txt"); 
     std::string line;
 
     while (std::getline(file, line)) {
