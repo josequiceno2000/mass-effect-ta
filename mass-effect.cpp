@@ -451,12 +451,44 @@ int main() {
                 "Ashley Williams\n"
                 "Kaidan Alenko\n"
                 "==========================\n\n"
-                "---------------------------\n\n";;
+                "---------------------------\n\n";
             }
         }
         
     }
 
+    // End chapter results
+    std::cout << "---------------------------\n\n"
+    "[CHAPTER 1 OUTCOME]\n\n";
+    // Case 1: None recruited
+    if (user_choice_1 == "2" && user_choice_2 == "2" && user_choice_3 == "2") {
+        std::cout << "Flanked by Kaidan and Ashley, you face the daunting task of stopping Saren without the aid of Garrus, Wrex, or Tali.\n"
+        "The absence of Garrus's tactical expertise, Wrex's raw power, and Tali's technical prowess is keenly felt as you navigate the\n"
+        "treacherous political landscape of the Citadel and the deadly missions ahead. With fewer squadmates, each encounter becomes\n" 
+        "a grueling test of skill and resilience, pushing you and the squad to your limits.\n\n" 
+        "The fate of the galaxy hangs in the balance, resting on the shoulders of this diminished but determined team.\n";
+    }
     
+
+    // Case 2: Everyone recruited
+    else if (user_choice_1 == "1" && user_choice_2 == "1" && user_choice_3 == "1") {
+        std::cout << "With Garrus's marksmanship, Tali's tech skills, and Wrex's ferocity bolstering their ranks, your team becomes\n"
+        "an unstoppable force.  The combined expertise allows the squad to swiftly overcome obstacles, from infiltrating heavily guarded\n" 
+        "facilities to deciphering complex alien technology.  The camaraderie within the expanded squad strengthens their resolve,\n"
+        "forging an unbreakable bond as you face the Reaper threat.  Each member brings unique insights and abilities to the table,\n"
+        "making them adaptable and formidable against any challenge Saren throws their way.\n\n"
+        "The galaxy's hope rests on the shoulders of this powerful and united team.\n";
+    }
+
+    // Case 3: At least one person recruited
+    else
+    {
+        std::cout << "Accompanied by your crew, you face a unique challenge. The added expertise of your alien squadmate proves invaluable,\n" 
+        "but the absence of the other specialists creates noticeable gaps in the squad's capabilities.  You must rely heavily on Kaiden and\n"
+        "Ashley to compensate, forcing you to adapt your strategies and prioritize missions that align with the team's strengths.\n"  
+        "While the smaller squad fosters a closer bond, the limited skillsets make certain encounters significantly more difficult,\n"
+        "demanding creative solutions and a greater reliance on your own abilities.\n\n" 
+        "The fate of the galaxy rests on your ability to overcome these limitations, leveraging your squad's unique combination of skills.\n";
+    }
     
 }
